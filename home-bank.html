@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bank Home page</title>
+</head>
+<body>
+    <header>
+        <h1 class=" text-5xl text-center mt-10 ">Welcome to <span class="text-orange-400 font-bold">Baper Bank !!!</span></h1>
+    </header>
+    <main class="mx-auto w-3/4">
+        <section>
+            <div class="grid grid-cols-3 gap-4 mt-12 text-white  text-center" >
+                <div class="bg-slate-400 rounded p-10">
+                    <h4 class="text-2xl">Deposit</h4>
+                    <h3 class="text-5xl mt-2">$ <span id="deposit-totel">00</span></h3>
+                </div>
+                <div class="bg-lime-300 rounded p-10">
+                    <h4 class="text-2xl">Withdrw</h4>
+                    <h3 class="text-5xl mt-2">$<span id="withdrw-total">00</span></h3>
+                </div>
+                <div class="bg-fuchsia-300 rounded p-10">
+                    <h4 class="text-2xl">Balance</h4>
+                    <h3 class="text-5xl mt-2">$<span id="balance-total">00</span></h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deposit && Withdrw -->
+
+        <section class="mt-10">
+            <div class="grid grid-cols-2 gap-8 ">
+                    <div class="bg-lime-300 rounded p-8">
+                    <h3 class="text-2xl">Please Deposit</h3>
+                    <div >
+                        <input class="rounded w-2/4 mt-2 mb-4 p-2 block border-0 " name="" id="deposit-input" placeholder="$ your Deposit Amaount">
+                        <button id="deposit-btn" class="bg-fuchsia-400 text-black font-bold rounded px-4 py-2">Submit</button>
+                    </div>
+                </div>
+                    <div class="bg-slate-300 rounded p-8">
+                    <h3 class="text-2xl">Please Withdrw</h3>
+                    <div >
+                        <input class="rounded w-2/4 mt-2 mb-4 p-2 block border-0 " id="withdrw-input" placeholder="$ your Withdrw Amaount">
+                        <button id="withdrw-btn" class="bg-fuchsia-400 text-black font-bold rounded px-4 py-2">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./Js file/preace.js"></script>
+</body>
+</html>

@@ -1,32 +1,42 @@
             // Deposit submit 
-document.getElementById('deposit-btn').addEventListener('click',function(){
-    const depositInput = document.getElementById('deposit-input');
+
+function totalAmountInput(input){
+    const depositInput = document.getElementById(input);
     const depositText =  parseFloat(depositInput.value);
+    depositInput.value = ''; 
+    return depositText
+}
 
-    const depositAmount = document.getElementById('deposit-totel');
+function updatTotal(totalField, Amount){
+    const depositAmount = document.getElementById(totalField);
     const depositTotal = parseFloat(depositAmount.innerText);
-    depositAmount.innerText = depositTotal + depositText;
+    depositAmount.innerText = depositTotal + Amount;
+}
 
+function updatBalance(totalAmount, isAdd){
     const balanceTotal = document.getElementById('balance-total');
     const balanceText = parseFloat(balanceTotal.innerText);
-        balanceTotal.innerText = balanceText + depositText;
+    if(isAdd == true){
+        balanceTotal.innerText = balanceText + totalAmount;
+    }
+    else{
+        balanceTotal.innerText = balanceText - totalAmount;
+    }
+        
+}
 
-        depositInput.value = ''; 
+    document.getElementById('deposit-btn').addEventListener('click',function(){
+   
+    const depositText =  totalAmountInput('deposit-input');
+        updatTotal('deposit-totel', depositText);
+        updatBalance(depositText, true);
+})
+    document.getElementById('withdrw-btn').addEventListener('click', function(){
+   
+    const withdrwInputText = totalAmountInput('withdrw-input');
+         updatTotal('withdrw-total', withdrwInputText);
+        updatBalance(withdrwInputText, false);
 })
 
-document.getElementById('withdrw-btn').addEventListener('click', function(){
-    const withdrwInput = document.getElementById('withdrw-input');
-    const withdrwInputText = parseFloat(withdrwInput.value);
-
-    const withdrwTotal = document.getElementById('withdrw-total');
-    const withdrwTotalAmount = parseFloat(withdrwTotal.innerText);
-    withdrwTotal.innerText = withdrwTotalAmount + withdrwInputText;
-
-    const balanceTotal = document.getElementById('balance-total');
-    const balanceTotalText = parseFloat(balanceTotal.innerText);
-     balanceTotal.innerText = balanceTotalText - withdrwInputText;
-
-    withdrwInput.value = '';
-})
 
 
